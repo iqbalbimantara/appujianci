@@ -1,5 +1,6 @@
 <?php
 
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 use Jenssegers\Blade\Blade;
@@ -28,9 +29,25 @@ class Welcome extends CI_Controller
     }
 
     public function tampil()
+    
     {
-        $nama = 'tata';
+        $nama = $this->input->post('nama');
+        $nim = $this->input->post('nim');
+        $umur = $this->input->post('umur');
+        $status = '';
+
+        if ($umur >= 0 && $umur <= 10) {
+            $status = 'Anak';
+        } elseif ($umur > 10 && $umur <= 20) {
+            $status = 'Remaja';
+        } elseif ($umur > 20 && $umur <= 30) {
+            $status = 'Dewasa';
+        } elseif ($umur > 30) {
+            $status = 'Tua';
+        }
+
+       
         $blade = new Blade(VIEWPATH, APPPATH . 'cache');
-        echo $blade->make('tampil', ['nama' => $nama])->render();
+        echo $blade->make('tampil', ['nama' => $nama, 'nim' => $nim, 'umur' => $umur, 'status' => $status])->render();
     }
 }
