@@ -30,7 +30,7 @@
   <body>
 <div class="col-lg-8 mx-auto p-4 py-md-5">
   <main>
-    <h1 class="text-body-emphasis">Ujian Pemrograman Web</h1>
+    <h1 class="text-body-emphasis">Ujian Pemrograman Webbbb</h1>
     <hr class="col-3 col-md-2 mb-5">
 
     <div class="row g-5">
